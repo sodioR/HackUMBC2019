@@ -1,5 +1,7 @@
 {
   "name": "bender",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
