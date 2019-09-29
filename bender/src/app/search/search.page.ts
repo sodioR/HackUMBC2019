@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
-  constructor() { }
+  constructor(private geolocation: Geolocation) { }
 
   ngOnInit() {
   }
 
+  getLocation() {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      console.log(resp.coords.latitude, resp.coords.longitude);
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+  }
 }
