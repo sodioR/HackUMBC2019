@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {NavController} from '@ionic/angular';
-import {SearchPage} from '../search/search.page';
 
 @Component({
   selector: 'app-home',
@@ -9,5 +7,5 @@ import {SearchPage} from '../search/search.page';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor() {}
 }

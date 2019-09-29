@@ -1,0 +1,5 @@
+{{_venue.name}} - Distance: {{_venue.location.distance}} meters
+<a [href]="'https://www.google.com/search?q=' + _venue.name">Details</a>
+<br>
+<p *ngIf="averagePrice != null">Average price: {{averagePrice}}</p>
+<p *ngIf="averagePrice == null">Could not retrieve price</p>

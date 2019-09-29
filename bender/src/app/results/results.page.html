@@ -5,5 +5,7 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngFor="let venue of this.venues">
+    <app-venue [venue]="venue"></app-venue>
+  </ion-list>
 </ion-content>
