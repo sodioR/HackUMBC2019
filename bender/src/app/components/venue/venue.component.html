@@ -1,5 +1,8 @@
-{{_venue.name}} - Distance: {{_venue.location.distance}} meters
-<a [href]="'https://www.google.com/search?q=' + _venue.name">Details</a>
-<br>
-<p *ngIf="averagePrice != null">Average price: {{averagePrice}}</p>
-<p *ngIf="averagePrice == null">Could not retrieve price</p>
+<div *ngIf="displayThreshold == null || (averagePrice != null && averagePrice > displayThreshold)">
+    {{_venue.name}} - Distance: {{_venue.location.distance}} meters
+    <a [href]="'https://www.google.com/search?q=' + _venue.name">Details</a>
+    <br>
+    <p *ngIf="averagePrice != null">Average price: {{averagePrice}}</p>
+    <p *ngIf="averagePrice == null && failedPrice">Could not retrieve price: quota error</p>
+    <p *ngIf="averagePrice == null && !failedPrice">Retrieving price <ion-spinner></ion-spinner></p>
+</div>

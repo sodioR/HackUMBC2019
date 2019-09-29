@@ -9,8 +9,8 @@ import {Venue} from './models/venue';
 export class FoursquareService {
   constructor(private http: HttpClient) { }
 
-  private clientId = '';
-  private clientSecret = '';
+  private clientId = 'ABHMMYVHSSUEYAJIFAA12KUTY0R1GWP1A5HLEKZJHDM1FIU1';
+  private clientSecret = 'MROWLSF0WUZJDUEN4FIW3SQPUTG5BXJ050FIF2PIUN5ITJCU';
 
   public queryLocations(latlon: string, radius: number, keywords: string = null) {
     console.log('query locations called... querying foursquare');

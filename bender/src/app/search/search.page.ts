@@ -24,7 +24,8 @@ export class SearchPage implements OnInit {
 
         // tslint:disable-next-line:no-shadowed-variable
         const navigationExtras: NavigationExtras = {
-          state: { venues: searchResults.response.venues as Venue[] }
+          state: { venues: searchResults.response.venues as Venue[],
+          budget: 100}
         };
 
         this.navCtrl.navigateByUrl('results', navigationExtras);

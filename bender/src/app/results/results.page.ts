@@ -9,11 +9,13 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class ResultsPage implements OnInit {
   public venues: Venue[];
+  private budget: number;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.venues = this.router.getCurrentNavigation().extras.state.venues;
+        this.budget = this.router.getCurrentNavigation().extras.state.budget;
       }
     });
   }

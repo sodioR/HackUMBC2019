@@ -5,7 +5,12 @@
 </ion-header>
 
 <ion-content>
+  <ion-title>Results in budget:</ion-title>
   <ion-list *ngFor="let venue of this.venues">
-    <app-venue [venue]="venue"></app-venue>
+    <app-venue [venue]="venue" [displayThreshold]="budget"></app-venue>
+  </ion-list>
+  <ion-title>All results:</ion-title>
+  <ion-list *ngFor="let venue of this.venues">
+    <app-venue [venue]="venue" [displayThreshold]="null"></app-venue>
   </ion-list>
 </ion-content>
